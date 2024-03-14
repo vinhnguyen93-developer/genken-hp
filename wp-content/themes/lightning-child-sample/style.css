@@ -1,0 +1,3433 @@
+/*
+Theme Name: genken
+Theme URI: 
+Template: lightning
+Description: 
+Author: 
+Tags: 
+Version: 0.6.0
+*/
+
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+} /*全ての要素をborder-boxにするーーコンテンツ、border、paddingの合計がwidthと解釈される*/
+
+html {
+  font-size: 100%;
+}
+/*設定した文字サイズを正しく反映*/
+
+img {
+  max-width: 100%;
+}
+/*画像の大きさの指定。画像が親要素よりも大きくなることを防ぐ*/
+
+img swallow.png {
+  width: 15px;
+  height: 15px;
+}
+/*cursorに使用するためにサイズを設定*/
+
+a {
+  color: black;
+  text-decoration: none; /*<a>タブの傍線非表示*/
+  cursor: url(”image/swallow.png”), auto;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: white;
+  position: relative;
+}
+
+.home {
+  background-color: #f5efe9;
+}
+
+body.home .footer-area {
+  margin-top: 0px;
+}
+
+a {
+  cursor: pointer;
+}
+
+/*====================ここからヘッダーcss====================*/
+
+.header-area {
+  width: 100%;
+  height: 105px;
+  padding-top: 40px;
+  padding-left: 20px;
+  position: relative;
+  background-color: #f5efe9;
+}
+
+.header-logo-nav {
+  display: flex;
+  align-items: center; /*ヘッダー内ロゴ、ナビの上下方向下揃え*/
+  width: 100%;
+}
+
+.header-logo-syamei {
+  width: 18%;
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 0;
+  width: 76.18%;
+}
+
+.header-nav span {
+  font-size: 11px;
+}
+
+.header-nav li {
+  padding-right: 4px;
+  padding-left: 4px;
+  width: 96%;
+  flex: 1;
+  border-left: solid #87888e;
+  border-right: solid #87888e;
+  text-align-last: justify;
+}
+
+.header-nav li + li {
+  border-left: 0;
+  border-right: solid #87888e;
+}
+
+/* 余白や背景色を調整する場合 */
+.header-search {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  height: 21px;
+}
+
+.header-search-custom {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* #searchform {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+#searchfield {
+  border: none;
+  background-color: transparent;
+}
+
+#searchform button {
+  position: absolute;
+  width: 30%;
+  right: 0px;
+  top: 25px;
+  border: none;
+  background-color: transparent;
+} */
+
+.wrap-search-form {
+  margin: 0 5px;
+}
+
+.search-form-header {
+  max-width: 1152px;
+  margin: 0 auto;
+  background-color: #eee8e1;
+  margin-top: 2rem;
+  border-bottom: 2px solid;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s ease-out, height 0.8s ease-out;
+}
+
+.search-form-is-active {
+  height: auto;
+  opacity: 1;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.search-form-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 12px;
+  color: black;
+}
+
+/*====================共通css====================*/
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.448;
+  font-weight: 700;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.448;
+}
+
+main {
+  margin: auto;
+}
+
+/*====================ここからフロントページcss====================*/
+
+#main-visual {
+  width: 67.85%;
+  display: block;
+  margin: 113px auto 54px;
+}
+
+#back-white {
+  content: '';
+  position: absolute;
+  top: -200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  transform: skewY(20deg);
+  z-index: -2;
+  width: 100%;
+  height: 900px;
+}
+
+#back-lightgray {
+  background-color: lightgray;
+  z-index: -3;
+  width: 100%;
+  height: 55%;
+  position: absolute;
+  top: 900px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: skewY(-20deg);
+}
+
+#back-lightgray2 {
+  background-color: lightgray;
+  z-index: -1;
+  width: 100%;
+  height: 50px;
+  margin-top: 43px;
+}
+
+.news h1 {
+  font-size: 32px;
+  line-height: 1.21;
+  text-align: center;
+}
+
+.yomimono h2 {
+  display: inline;
+  text-align: center;
+}
+
+.news {
+  text-align: center;
+  border-top: 2px solid;
+  border-color: rgb(0, 145, 255);
+  margin-top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.news-TOPICS {
+  width: 100%;
+  font-size: 20px;
+  text-align: left;
+}
+
+.news-TOPICS dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-top: 50px;
+  margin-left: 400px;
+}
+
+.news-TOPICS dt {
+  width: 20%;
+}
+
+.news-TOPICS dd {
+  margin-left: 0;
+  width: 70%;
+}
+
+.main-contents {
+  width: 58.61%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+}
+
+ul.main-contents-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /*grid-template-rows: repeat(3,120px);*/
+  gap: 42px 32px;
+  padding-left: 0;
+}
+
+.card-visual {
+  position: relative;
+} /*カードのタイトルの位置を指定するための基準*/
+
+.card-visual img {
+  width: 100%; /*imgの幅を親要素に合わせる。（親要素に任意のwidthを指定すると同時に）*/
+}
+
+.card-visual-title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-visual-title p {
+  line-height: 120px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.change-white {
+  color: white;
+}
+
+.yomimono-wrap {
+  width: 88.75%;
+  border: 2px solid;
+  border-color: rgb(0, 145, 255);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+  padding-bottom: 70px;
+  position: relative; /*back-lightblueの配置基準*/
+}
+
+#back-lightblue {
+  background-color: #d1eef5;
+  z-index: -2;
+  width: calc(100% + 6%);
+  margin-left: -3%; /* 左側にはみ出す部分 */
+  margin-right: -3%; /* 右側にはみ出す部分 */
+  height: 150%;
+  position: absolute; /*基準ボックスでの配置*/
+  top: 5px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: skewY(25deg);
+}
+
+/*.reading-search-content{
+    width: 30%;
+}*/
+
+.yomimono {
+  position: relative; /*reading-searchの配置基準*/
+  margin-top: 36px;
+}
+
+#reading-search {
+  /*検索フォーム*/
+  position: absolute;
+  display: flex; /*inputとbutton横並び*/
+  right: 36px;
+  top: 0px;
+  vertical-align: baseline; /*form-input、formーbutton下揃え*/
+}
+
+.reading-searchfield {
+  /*検索box*/
+  position: relative; /*reading-submitボタンの配置基準*/
+  border: none;
+  border-bottom: solid rgb(103, 100, 100);
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+}
+
+#reading-submit {
+  position: absolute; /*reading-searchfieldの右端に重ねる配置*/
+  width: 30%;
+  right: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+img swallow.png {
+  width: 15px;
+  height: 15px;
+}
+
+.yomimono-container {
+  width: 90.25%;
+  display: grid;
+  column-gap: 35px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(3, 1fr);
+  height: auto;
+  /*justify-content: space-between;*/
+  cursor: url('image/swallow.png'), auto;
+}
+
+a {
+  cursor: url('image/swallow.png'), pointer;
+}
+
+.yomimono-item {
+  /*リボンの設定*/
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.ribbon {
+  position: absolute;
+  /*item（写真）を基本にした位置設定をする*/
+  left: -30px;
+  top: 15px;
+  transform: rotate(-45deg);
+  width: 100px;
+  padding: 5px;
+  background: #f00;
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 1;
+  text-align: center;
+}
+
+.yomimono-item h3 {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.yomimono-item p {
+  width: 68.95%;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.yomimono-item-nav-links,
+.research-report-nav-links,
+.archive-nav-links {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.yomimono-nav-links li,
+.research-report-nav-links li,
+.archive-nav-links li {
+  border: rgb(51, 49, 49) solid 1px;
+  border-radius: 5px / 5px;
+  text-align: center;
+  margin-right: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.yomimono-nav-links .dots,
+.research-report-nav-links .dots,
+.archive-nav-links .dots {
+  border-style: none;
+}
+
+/*====================ここからフッターcss====================*/
+
+.footer-area {
+  width: 100%;
+  height: 947px;
+  padding-top: 50px;
+  background-color: #f5efe9;
+  margin-top: 150px;
+}
+
+.footer-area-first {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 78%;
+}
+
+.footer-area-second {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 78%;
+}
+
+.footer-nav {
+  font-size: 18px;
+}
+
+.footer-nav li {
+  line-height: 2;
+}
+
+.footer-nav li span {
+  font-weight: bold;
+}
+
+.footer-address {
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.footer-address p {
+  font-size: 16px;
+}
+
+/*====================ここから会社情報・考え方・研究会・セミナーのchildページとAccess,お問合せ、新規事業開発室、プライバシーポリシー、コラム＆アーティクル投稿のh1設定=======*/
+
+h1.back-blue,
+p.back-blue {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  height: 140px;
+  background-color: #336b94;
+  line-height: 140px; /*見出し垂直方向のセンタリング*/
+  margin-top: 0;
+}
+
+/*====================ここから会社情報／事業の構成／人材開発／経営コンサルティング／ourstories／現研セミナー／研究会活動／考え方教室／社会提言／コラム＆アーティクル／メディア事業の共通css=======*/
+
+.border-only {
+  width: 100%;
+  height: 0px;
+  border: solid #4070bf 3px;
+  margin-top: 80px;
+}
+
+/*====================ここから会社情報／事業の構成／考え方教室／研究会／セミナー／人材開発／経営コンサルティング／ourstories／社会提言／コラム＆／メディア事業／検索結果（ヘッダーの検索・readingの検索）の共通css=======*/
+
+.company-title,
+.service-title,
+.training-title,
+.study-title,
+.seminar-title,
+.human-title,
+.consulting-title,
+.ourstories-title,
+.think-tank-function-title,
+.column-article-title,
+.media-business-title,
+.search-result-title {
+  width: 69.44%;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*====================ここから会社情報／考え方教室／研究会活動／セミナーの共通css=======*/
+
+#company-visual,
+#training-visual,
+#study-visual,
+#seminar-visual {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*====================ここから考え方教室／セミナー／社会提言／研究会活動共通css=======*/
+
+.training-contents ul,
+.seminar-contents ul,
+.think-tank-function-contents ul,
+.membership ul {
+  font-size: 20px;
+  line-height: 1.45;
+  list-style: disc;
+}
+
+/*====================ここから会社情報／考え方教室／セミナー／社会提言／研究会活動／事業の構成／人材開発／経営コンサルティング／メディア事業／ourstories／コラム＆アーティクル共通css=======*/
+
+.company-contents h2,
+.training-contents h2,
+.seminar-contents h2,
+.think-tank-function-contents h2,
+.membership h2,
+.service-contents h2,
+.human-contents h2,
+.consulting-contents h2,
+.study-contents h2,
+.media-business-contents h2,
+.ourstories-contents h2,
+.column-article-wrap h2 {
+  background-image: url(/_g3/image/vector.png);
+  width: 440px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  z-index: 6;
+  margin-bottom: 50px;
+}
+
+/*====================ここから考え方教室／セミナー／研究会活動／人材開発／経営コンサルティング共通css=======*/
+
+.training-item p,
+.seminar-item1 p,
+.seminar-item2 p,
+.study-item p,
+.human-item p,
+.consulting-item p {
+  text-align: justify;
+  margin-top: 20px;
+  line-height: 1.448;
+}
+
+.training-item h3,
+.seminar-item1 h3,
+.seminar-item2 h3,
+.study-item h3,
+.human-item h3,
+.consulting-item h3 {
+  text-align: center;
+}
+
+/*====================ここから考え方教室／セミナー／社会提言／研究会活動／人材開発／経営コンサルティング共通css=======*/
+
+.training-item,
+.seminar-item1,
+.seminar-item2,
+.research-report-item,
+.study-item,
+.human-item,
+.consulting-item {
+  border: 3px solid #4070bf;
+  padding: 16px 30px;
+}
+
+/*====================ここから人材開発／経営コンサルティング／社会提言／ourstoriesの共通css=======*/
+
+#human-visual,
+#consulting-visual,
+#think-tank-function-visual,
+#ourstories-visual {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*====================ここから考え方教室／研究会活動／人材開発／経営コンサルティング／セミナー／社会提言／検索結果（ヘッダーの検索・readingの検索）の共通css=======*/
+
+.training-contents-wrap,
+.study-contents-wrap,
+.human-contents-wrap,
+.consulting-contents-wrap,
+.seminar-contents-wrap,
+.think-tank-function-wrap,
+.search-result-contents-wrap {
+  width: 58.33%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 56px;
+  text-align: justify;
+}
+
+/*====================ここから考え方教室・経営コンサルティングのcss====================*/
+
+.training-container,
+.consulting-container {
+  width: 72.63%;
+  display: grid;
+  grid-template-columns: repeat(2, 46.65%);
+  grid-template-rows: repeat(3, 309px);
+  gap: 67px 70px;
+  margin: 100px auto 0px;
+  max-width: 100%;
+}
+
+/*====================ここから会社情報のcsss設定=======*/
+
+.company-contents {
+  width: 74.44%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+.company-contents h2 {
+  margin-left: 104px;
+  margin-top: 51px;
+}
+
+.company-container1,
+.company-container2 {
+  display: flex;
+  justify-content: center;
+  column-gap: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-container1 {
+  margin-top: 110px;
+}
+
+.company-container2 {
+  margin-top: 25px;
+}
+
+.company-item8 {
+  width: 32.09%;
+  height: 139px;
+  border: 3px solid #4070bf;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.company-item8 h3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.company-item8 p {
+  text-align: left;
+  font-size: 18px;
+}
+
+/*====================ここから会社概要のcss=======*/
+
+.aboutus {
+  margin-top: 49px; /*テーブルの１行目上に行間51pxがあるのでテーブルmargin-topを合計で100pxにする*/
+  /*margin-left: 30%;*/
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 0 51px; /*テーブルセルのボーダー間隔。左右、上下*/
+}
+
+.aboutus th {
+  font-size: 20px;
+  width: 20%;
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.aboutus td {
+  font-size: 20px;
+  line-height: 1.45;
+  padding-left: 20px;
+}
+
+/*====================ここからご挨拶／現研の理念・使命／経営コンサルティングの子ページ／人材開発の子ページ／研究会会員制度の共通css=======*/
+
+.contents {
+  width: 58.33%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify; /*文章両端揃え*/
+}
+
+.contents p {
+  margin-top: 70px;
+  line-height: 1.448;
+}
+
+/*====================ここからご挨拶のcss=======*/
+
+.portrait {
+  width: 32.97%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.genken-president p {
+  font-size: 24px;
+  margin-top: 19px;
+  text-align: center;
+  line-height: 1.448;
+}
+.gen-message p {
+  font-size: 20px;
+  margin-top: 89px;
+  line-height: 1.448;
+}
+
+/*====================ここから現研の理念・使命css=======*/
+
+.kihonrinen {
+  display: block; /*span要素をセンタリングするためにこの設定を入れる*/
+  text-align: center;
+  margin-bottom: 57px;
+}
+
+.book-title-up {
+  font-size: 30px;
+  display: block; /*span要素をセンタリングするためにこの設定を入れる*/
+  text-align: center;
+  margin-top: 57px;
+  margin-bottom: 130px;
+}
+
+.shui {
+  margin-top: 130px;
+}
+
+p.purpose {
+  margin-top: 40px;
+  line-height: 1.448;
+}
+
+.shimei {
+  margin-top: 80px;
+  line-height: 1.448;
+}
+
+.book-about {
+  width: 52.5%;
+  margin-top: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-title-down {
+  font-size: 30px;
+  display: block; /*span要素をセンタリングするためにこの設定を入れる*/
+  text-align: center;
+  font-weight: 700;
+}
+
+.book-zibunwokoeru {
+  display: block;
+  width: 47.48%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-about p {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  line-height: 1.448;
+}
+
+/*====================ここからAccessのcss=======*/
+
+.access-section-wrap {
+  width: 39.23%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.access-contents h2 {
+  margin-bottom: 0px;
+}
+
+p.ad {
+  margin-top: 15px;
+  margin-bottom: 38px;
+}
+
+.access-root {
+  margin-top: 38px;
+}
+
+.break-time h2 {
+  margin-top: 151px;
+}
+
+.break-time-shop {
+  width: 190px;
+  margin-right: 49px;
+}
+
+.shop {
+  width: 63.36%;
+}
+
+.recommend-shop {
+  display: flex;
+}
+
+/*====================ここから事業の構成service=======*/
+
+#service-visual {
+  width: 57.8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-contents {
+  width: 61.25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+.service-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 340px); /*画像の高さ＋タイトル・文章の高さ*/
+  gap: 250px 205px;
+  margin: 50px auto 0px;
+  max-width: 100%;
+}
+
+.service-contents h2 {
+  margin-top: 50px;
+}
+
+.service-item h3 {
+  margin-top: 19px;
+}
+
+.service-item p {
+  margin-top: 24px;
+}
+
+/*====================ここから人材開発のcss====================*/
+
+.human-contents p {
+  margin-top: 50px;
+}
+
+.human-container {
+  width: 73.12%;
+  display: grid;
+  grid-template-columns: repeat(2, 46.34%);
+  grid-template-rows: repeat(2, 309px);
+  gap: 55px 77px;
+  margin: 100px auto 0px;
+  /*max-width: 100%;*/
+}
+
+/*====================ここからsingle-ourStoriesのcss=======*/
+
+.ourstories-si-contents {
+  width: 58.33%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify; /*文章両端揃え*/
+}
+
+h3.ourstories-mm {
+  margin-bottom: 50px;
+}
+
+h2.outline-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+h3.ourstories-era,
+h3.ourstories-mm {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.outline-hi {
+  font-weight: 700;
+}
+
+h4.ourstories-s {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+p.ourstories-text,
+p.ourstories-text2 {
+  font-size: 20px;
+  margin-top: 33px;
+}
+
+.ourstories-first,
+.ourstories-second {
+  margin-top: 70px;
+}
+
+.r-title a {
+  font-size: 20px;
+  color: blue;
+}
+
+.r-title {
+  text-align: right;
+  margin-top: 18px;
+}
+
+/*====================ここからOur Storiesのcss=======*/
+
+.ourstories-contents h2 {
+  margin-left: 290px;
+  margin-top: 50px;
+}
+
+.ourstories-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 219px);
+  gap: 39px 38px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ourstories-item {
+  border: 3px solid #4070bf;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ourstories-item h4 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+p.ourstories-subheading {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+p.part {
+  font-size: 20px;
+  margin-bottom: 0;
+  text-align: justify;
+  line-height: 1.448;
+}
+
+/*====================ここから若手リーダー／海外駐在／財務分析編／産業（建築）編／M＆A講座／パワーアップ研究セミナー／研究会／会員制度／総合研究会共通css=======*/
+
+.section-wrap {
+  width: 58.33%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.young-contents h2,
+.foreign-contents h2,
+.finance-contents h2,
+.ma-contents h2,
+.innovation-contents h2,
+.powerup-contents h2,
+.spring-contents h2,
+.industry-contents h2,
+.gutaikaken-contents h2 {
+  margin-top: 50px;
+}
+
+.young-item-wrap,
+.foreign-item-wrap,
+.finance-item-wrap,
+.ma-item-wrap,
+.innovation-item-wrap,
+.powerup-item-wrap,
+.spring-item-wrap,
+.comprehensive-item-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 135px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item5,
+.item6 {
+  width: 47.02%;
+}
+
+.item6 {
+  margin-left: 100px;
+}
+
+.next-schedule,
+.comprehensive-last-schedule {
+  margin-top: 130px;
+}
+
+.schedule,
+.comprehensive-last-schedule {
+  font-size: 20px;
+  line-height: 1.45;
+  border-spacing: 0 25px;
+  margin-top: 49px;
+}
+
+.schedule th,
+.comprehensive-last-schedule-contents th {
+  width: 25%;
+  text-align: justify;
+}
+
+.application-wrap {
+  margin-top: 68px; /*テーブルの行間25px分をマイナスした数値*/
+}
+
+.application {
+  margin-left: 80px;
+  margin-top: 35px;
+}
+
+.application-text {
+  font-size: 20px;
+}
+
+.application ul {
+  margin-top: 35px;
+}
+.application ul li {
+  font-size: 20px;
+  line-height: 1.45;
+  list-style-type: disc;
+}
+
+.inquiry {
+  margin-top: 35px;
+}
+
+/*====================ここから産検／具体化研のcss====================*/
+
+.industry-contents p,
+.gutaikaken-contents p {
+  margin-top: 20px;
+}
+
+.industry-contents h3,
+.application-wrap h3,
+.gutaikaken-contents h3 {
+  margin-top: 50px;
+}
+
+/*====================ここから海外駐在候補者研修css=======*/
+
+.foreign-pg {
+  width: 126%;
+  display: flex;
+  justify-content: left;
+  margin-left: -79px;
+}
+
+.foreign-pg-first,
+.foreign-pg-second,
+.foreign-pg-third {
+  width: 42%;
+  border: 1px solid;
+  padding: 20px 10px;
+}
+
+.foreign-pg-second,
+.foreign-pg-third {
+  border-left: none; /*table重なる部分のborderを消す*/
+}
+
+.foreign-pg-first td,
+.foreign-pg-second td,
+.foreign-pg-third td {
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px;
+}
+
+.pg-first-line {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block; /*span要素をセンタリングするため*/
+  text-align: center;
+}
+
+/*====================ここから経営のストーリーを読み解こう／実践経営イノベーション講座／若手リーダー育成研修のcss=======*/
+
+.finance-pg,
+.young-pg,
+.innovation-pg {
+  width: 118.8%;
+  /*width: calc(100% + 19.04%); /*親width840px。１日目・2日目table width499px✖️2=998px.はみ出る分158px*/
+  display: flex;
+  justify-content: left;
+  margin-left: -79px; /*はみ出る部分*/
+}
+
+.finance-pg-first,
+.finance-pg-second,
+.young-pg-first,
+.young-pg-second,
+.innovation-pg-first,
+.innovation-pg-second,
+.ma-pg-first,
+.ma-pg-second {
+  width: 59.4%;
+  border: 1px solid;
+  padding: 20px 20px;
+}
+
+.finance-pg-second,
+.young-pg-second,
+.innovation-pg-second {
+  border-left: none; /*table重なる部分のborderを消す*/
+}
+
+.finance-pg-first th,
+.finance-pg-second th,
+.young-pg-first th,
+.young-pg-second th {
+  width: 15%;
+  padding: 5px;
+}
+
+.finance-pg-first td,
+.finance-pg-second td,
+.young-pg-first td,
+.young-pg-second td {
+  width: 85%;
+  padding: 5px;
+}
+
+.finance-pg-first th,
+.finance-pg-first td,
+.finance-pg-second th,
+.finance-pg-second td,
+.young-pg-first th,
+.young-pg-first td,
+.young-pg-second th,
+.young-pg-second td {
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/*====================ここから実践経営イノベーション講座css=======*/
+
+.innovation-pg td {
+  width: 50%;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px;
+}
+
+/*====================ここから経営M＆A講座css=======*/
+
+.ma-pg {
+  width: 118.8%;
+  /*width: calc(100% + 19.04%); /*親width840px。１日目・2日目table width499px✖️2=998px.はみ出る分158px*/
+  display: flex;
+  justify-content: left;
+  margin-left: -79px; /*はみ出る部分*/
+}
+
+.ma-pg-first,
+.ma-pg-second {
+  width: 59.4%;
+  border: 1px solid;
+}
+
+.ma-pg-second {
+  border-left: none; /*table重なる部分のborderを消す*/
+}
+
+.ma-pg-first th,
+.ma-pg-second th {
+  width: 15%;
+  padding: 5px;
+}
+
+.ma-pg-first td,
+.ma-pg-second td {
+  width: 85%;
+  padding: 5px;
+}
+
+.ma-pg-first th,
+.ma-pg-first td,
+.ma-pg-second th,
+.ma-pg-second td {
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/*====================ここから現研セミナーcss=======*/
+
+.seminar-container {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  column-gap: 35px;
+  margin-top: 104px;
+}
+
+.seminar-contents ul {
+  font-size: 20px;
+}
+
+.seminar-item1,
+.seminar-item2 {
+  width: 33.9%;
+  height: 309px;
+  margin: 10px;
+}
+
+.seminar-item1 h3,
+.seminar-item2 h3 {
+  text-align: center;
+}
+
+.seminar-item1 p,
+.seminar-item2 p {
+  text-align: justify;
+}
+
+/*====================ここから研究会活動のcss====================*/
+
+.study-container {
+  width: 72.63%;
+  display: grid;
+  grid-template-columns: repeat(2, 46.65%);
+  grid-template-rows: repeat(2, 309px);
+  gap: 67px 70px;
+  margin: 100px auto 0px;
+  max-width: 100%;
+}
+
+/*====================こから産業事情検討会／具体化研究会共通css=======*/
+
+.theme-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(141, 138, 138);
+  padding: 8px;
+  margin: 4px;
+}
+
+.industry-themes-wrap,
+.past-theme-wrap {
+  margin-top: 50px;
+}
+
+.att {
+  font-size: 16px;
+}
+
+.conference {
+  font-size: 16px;
+}
+
+.past-theme {
+  display: flex;
+}
+
+.past-theme li {
+  border: 1px solid rgb(141, 138, 138);
+  width: 22%;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+}
+
+/*.past-themes-wrap {
+    /*display: flex;
+    column-gap: 33px;
+}
+
+.past-theme {
+    width: 80%;
+}
+
+.past-theme th, .past-theme td {
+    font-size: 18px;
+    vertical-align: bottom;
+}
+
+.past-theme th {
+    width: 40%;
+    text-align: justify;
+}
+
+.past-theme td {
+    width: 60%;
+}
+
+.sanken-wrap, .gutaikaken-wrap  {
+    width: 42.38%;
+}
+
+.item9 {
+    margin-bottom: 33px;
+}
+
+.item9, .item10 {
+    width: 100%;
+    display: block;
+}
+
+.koushi-list h2 {
+    margin-top: 198px;
+}*/
+
+/*====================こから産業事情検討会活動実績共通css=======*/
+
+.pdf-container h2 {
+  text-align: center;
+}
+
+/*====================こから産業事情検討会活動実績共通css=======*/
+
+.item6 {
+  width: 70%;
+}
+
+/*====================ここから社会提言css=======*/
+
+.research-report-container-wrap,
+.books-intro-wrap {
+  width: 58.33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.think-tank-function-contents,
+.research-report-contents {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.research {
+  margin-top: 100px;
+}
+
+.research ul {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.research-report-container-wrap {
+  margin-top: 30px;
+}
+
+.research-report-container {
+  width: 100%;
+  display: grid;
+  grid: wrap;
+  row-gap: 30px;
+}
+
+.research-report-item {
+  margin-bottom: 30px;
+}
+
+.research-report-item h3 {
+  font-size: 24px;
+  font-weight: bold;
+  height: 1.45;
+}
+
+.research-report-item p {
+  font-size: 20px;
+  font-weight: 400;
+  height: 1.45;
+}
+
+.books-intro-wrap {
+  margin-top: 164px;
+}
+
+.books-intro-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px 100px;
+  margin-top: 50px;
+}
+
+.books-intro-item {
+  width: 24.16%;
+  flex: 1;
+}
+
+.books-intro-title,
+.books-intro-okuduke {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.books-intro-title {
+  margin-top: 55px;
+}
+
+/*====================ここからコラム＆アーティクルcss=======*/
+
+#column-article-visual {
+  width: 60.4%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column-article-wrap {
+  width: 77.7%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column-article-wrap h2 {
+  margin-left: 80px;
+}
+
+.new-article {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 66px;
+}
+
+.column-article-archive {
+  display: flex;
+  margin-top: 108px;
+}
+
+.management-forum-wrap {
+  width: 65.9%;
+}
+
+.management-forum-content {
+  font-size: 24px;
+}
+
+.recent-post {
+  margin-top: 50px;
+}
+
+.management-forum {
+  border: 3px solid #4070bf;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.small-gray {
+  font-size: 20px;
+  color: #aaaaaa;
+}
+
+.management-forum p {
+  font-size: 24px;
+}
+
+.w-name-time {
+  display: flex;
+}
+
+.time {
+  margin-left: 50px;
+}
+
+.co-aside-area {
+  width: 30%;
+  margin-left: 85px;
+}
+
+.co-aside-area-search-form {
+  display: flex;
+}
+
+.co-aside-month-archive-wrap {
+  margin-top: 50px;
+}
+
+.archive-monthly li {
+  list-style: none;
+}
+
+.co-aside-category {
+  left: 0;
+  margin-top: 50px;
+}
+
+.co-aside-category p {
+  font-size: 18px;
+}
+
+.co-aside-input {
+  height: 48px;
+  border: solid 1px lightgrey;
+  background-color: #ffffff;
+}
+
+.co-aside-button {
+  background-color: transparent;
+  border: none;
+}
+
+/*====================ここからメディア事業css=======*/
+
+#media-business-visual {
+  width: 60.4%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-business-contents {
+  width: 72.85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+.media-business-contents h2 {
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.media-business-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  row-gap: 35px;
+  column-gap: 35px;
+  border-bottom: 2px solid #4070bf;
+  border-left: 2px solid #4070bf;
+  border-radius: 10px;
+  margin-top: 61px;
+  grid-template-areas:
+    'a b'
+    'c d'; /*4つを並べ替えるため、設定*/
+}
+
+.media-business-item {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.media-business-item img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-business-item p {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.bookseller-image,
+.genken-journal-image {
+  margin-top: 32px;
+}
+
+.street-illust,
+.genken-forum-image {
+  margin-top: 0px;
+}
+
+.media-typ {
+  margin-top: 20px;
+}
+
+.bookseller-typ {
+  margin-top: 55px;
+}
+
+.media-business-item1 {
+  border-top: 2px solid #4070bf;
+  border-right: 2px solid #4070bf;
+  border-radius: 10px;
+  grid-area: a;
+}
+
+.media-business-item2 {
+  border-top: 2px solid #4070bf;
+  border-left: 2px solid #4070bf;
+  border-right: 2px solid #4070bf;
+  border-radius: 10px;
+  grid-area: b;
+}
+
+.media-business-item3 {
+  grid-area: c;
+}
+
+.media-business-item4 {
+  border-top: 2px solid #4070bf;
+  border-right: 2px solid #4070bf;
+  border-radius: 10px;
+  grid-area: d;
+}
+
+.genken-journal-typ {
+  margin-top: 0px;
+}
+
+.bookseller-typ {
+  margin-top: 55px;
+}
+
+/*---------------------------------------ここから投稿ページのcss-------------------------------------*/
+
+.single-area {
+  display: flex;
+  margin-top: 100px;
+}
+
+.single-main {
+  width: 51%;
+  margin-left: 259px;
+}
+
+.single-title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.single-image {
+  text-align: center;
+}
+
+/* 執筆者と投稿日・カテゴリー名を横並びにする*/
+.writer-date-category-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-date-ca-wrap {
+  display: flex; /* Flexboxを使用して要素を横並びにする */
+  flex-direction: column; /* 縦方向に配置する */
+  align-items: flex-start; /* 左寄せにする */
+}
+
+.single-contents-date {
+  margin-bottom: 5px;
+}
+
+.ma-forumn-category {
+  margin-top: 5px;
+}
+.image-caption {
+  font-size: 24px;
+  padding: 32px;
+}
+
+/*-----------------------ここからsidebarのcss------------------------*/
+
+.aside-area {
+  margin-top: 50x;
+  width: 25%;
+  margin-left: 85px;
+  position: relative; /*----aside-area-search・search-contentの位置の基準----*/
+}
+
+.aside-area-search {
+  margin-left: 100px;
+  font-size: 24px;
+  top: 50px;
+}
+
+.search-content {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+
+#post-search {
+  /*position: absolute; /*aside-areaからの絶対配置*/
+  margin-top: 10px;
+  width: 80%;
+  display: flex; /*inputとbottonの横並び*/
+  font-size: 20px;
+}
+
+.post-searchfield {
+  position: relative; /*#post-submitの配置基準*/
+
+  height: 50px;
+  border: solid 1px lightgrey;
+  background-color: transparent;
+}
+
+#post-submit {
+  position: absolute; /*post-searchfieldの右端に重ねる*/
+  top: 0;
+  right: 5px;
+  background: url('g3/image/musimegane.png') no-repeat;
+  background-size: contain;
+
+  width: 20%; /* ボタンの幅*/
+
+  border: none; /* ボーダーなし*/
+  cursor: pointer; /* カーソルをポインターに変更*/
+}
+
+.archive-month-wrap {
+  margin-top: 200px;
+}
+
+ul.archive-list,
+.category-links ul {
+  padding-left: 0px;
+}
+
+#post-search {
+  line-height: 1;
+  position: absolute;
+  top: 0;
+}
+
+.post-searchfield {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: #efefef;
+}
+
+.post-submit {
+  position: absolute;
+  top: 10%;
+  right: 0.75em;
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+  color: #000;
+  border: none;
+  background: transparent;
+}
+
+.post-submit:hover {
+  opacity: 0.6;
+}
+
+/*------------------------------フォーラム-----------------------------------------*/
+
+.management-forum {
+  border: 3px solid #4070bf;
+  padding: 30px 60px;
+  text-align: justify;
+}
+
+/*------------------------------アーカイブ----------------------------------------*/
+.archive-content {
+  width: 90%;
+  margin: 100px, auto;
+}
+
+.post {
+  font-size: 20px;
+}
+
+.post-date {
+  font-weight: bold;
+}
+
+.post-title {
+  margin-left: 20px;
+}
+
+.page-numbers {
+  text-align: center;
+  list-style: none;
+}
+
+.nav-links .page-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links .current,
+.nav-links a.page-numbers,
+.nav-links a.next,
+.nav-links a.prev,
+.nav-links .dots {
+  font-size: 16px;
+  font-weight: bold;
+  border: rgb(51, 49, 49) solid 1px;
+  border-radius: 5px / 5px;
+  text-align: center;
+  margin-right: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*---------------------------------------お問い合わせ------------------------------------*/
+
+.lead {
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 2;
+}
+
+.contact {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.required {
+  color: rgb(255, 0, 144);
+}
+
+.wpcf7 {
+  margin-top: 90px;
+  text-align: left;
+}
+
+.wpcf7 input[type='text'],
+.wpcf7 input[type='email'],
+.wpcf7 input[type='tel'] {
+  width: 100%;
+  height: 50px;
+}
+
+.wpcf7 textarea[type='your-message'] {
+  width: 70%;
+  height: 360px;
+}
+
+.action_box {
+  text-align: center;
+}
+
+.wpcf7 input[type='submit'] {
+  text-align: center;
+  background-color: #336b94;
+  width: 20%;
+  height: 70px;
+  font-size: 28px bold;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.lead {
+  margin-bottom: 50px;
+}
+
+/*---------------------------検索結果（ヘッダーの検索・readingの検索）----------------------------*/
+
+#search-result-visual {
+  width: 53.33%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2.sp {
+  display: none;
+} /*PC表示なし*/
+
+h2.search-result {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3.result-title {
+  margin-top: 65px;
+}
+
+/*検索結果（コラム＆アーティクル）*/
+
+h3.search-result {
+  text-align: left;
+  font-weight: 400;
+}
+
+h3.new-article {
+  margin-top: 100px;
+}
+
+/*月別・カテゴリー別アーカイブ（コラム＆アーティクル）*/
+
+h2.c-art-cate {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/*プライバシーポリシー*/
+
+.privacy-contents {
+  width: 58.33%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify; /*文章両端揃え*/
+}
+
+.privacy-contents p {
+  margin-top: 30px;
+  line-height: 1.448;
+}
+
+.privacy-contents h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+.privacy-contents h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.privacy-contents ul li {
+  font-size: 20px;
+}
+
+/*---------------------------ハンバーガーメニュ-------------------*/
+
+.hamburger-menu-wrapper {
+  position: relative;
+}
+
+#hamburger-menu-button {
+  display: none;
+}
+
+#hamburger-menu-button:checked ~ .hamburger-menu-close {
+  display: block;
+  opacity: 0.5;
+}
+
+#hamburger-menu-button:checked ~ .hamburger-menu-content {
+  transform: translate3d(0, 0, 0);
+}
+
+.hamburger-menu-open .fa-bars {
+  color: #f4f4f4;
+  font-size: 20px;
+}
+
+.hamburger-menu-open {
+  position: absolute;
+  margin-bottom: 0;
+  width: 20px;
+  top: 20px;
+  height: 20px;
+  transition: 0.3s ease;
+  animation: site-title 0.8s ease 0.5s 1 normal;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.hamburger-menu-close {
+  display: none;
+  opacity: 0;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 3;
+}
+
+.hamburger-menu-content {
+  background: #fff;
+  position: fixed;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  transition: 0.3s ease;
+  transform: translate3d(-100%, 0, 0);
+  overflow: auto;
+  z-index: 5;
+}
+
+.hamburger-menu {
+  padding: 15px;
+}
+
+.hamburger-menu li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.hamburger-menu li a {
+  color: #555555;
+}
+
+.hamburger-menu li:before {
+  color: #ff69b4;
+  padding-right: 5px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f054';
+}
+
+.hamburger-menu li:hover {
+  transform: translateX(5px);
+}
+
+/*.child-contents{
+    width: 58.33%;
+    margin-top: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;  /*文章両端揃え*/
+
+/*.child-contents p{
+    font-size: 20px;
+    font-weight: 400;
+}*/
+
+/*====================産検アーカイブcss=======*/
+
+.industry-theme {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.industry-theme h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.theme-container {
+  vertical-align: middle;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.conference {
+  font-size: 20px;
+}
+
+/*====================メディアクエリーcss=======*/
+
+/*フロントページ*/
+@media (max-width: 640px) {
+  #main-visual {
+    width: 78.67%;
+    margin-top: 28px;
+    margin-bottom: 50px;
+  }
+
+  #back-white {
+    content: '';
+    position: absolute;
+    top: -600px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    transform: skewY(40deg);
+    z-index: -2;
+    width: 100%;
+    height: 900px;
+  }
+
+  ul.main-contents-cards {
+    grid-template-columns: 1fr; /*1列*/
+    gap: 46px;
+    padding-left: 0;
+  }
+
+  .card-visual-title p {
+    line-height: 1.448;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .news h1 {
+    font-size: 20px;
+    line-height: 1.21;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .news-TOPICS dl {
+    display: block;
+    width: 90%;
+    margin: 50px auto 20px;
+    text-align: center;
+  }
+
+  .news-TOPICS dt {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.448;
+  }
+
+  .news-TOPICS dd {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.448;
+    margin-bottom: 16px;
+  }
+
+  .main-contents {
+    width: 59.6%;
+  }
+
+  #back-lightblue {
+    background-color: #d1eef5;
+    z-index: -2;
+    width: calc(100% + 6%);
+    margin-left: -3%; /* 左側にはみ出す部分 */
+    margin-right: -3%; /* 右側にはみ出す部分 */
+    height: 140%;
+    position: absolute; /*基準ボックスでの配置*/
+    top: -1280px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(25deg);
+  }
+
+  .yomimono-wrap {
+    margin-top: 70px;
+  }
+
+  .yomimono {
+    display: block;
+    flex-direction: column;
+    margin-top: 117px;
+  }
+
+  .yomimono-container {
+    grid-template-columns: 1fr; /*1列*/
+  }
+
+  .yomimono-item p {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+
+  .yomimono {
+    position: relative; /*reading-searchの配置基準*/
+    margin-top: 47px;
+  }
+
+  .yomimono h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  #reading-search {
+    /*検索フォーム*/
+    top: 50px;
+  }
+
+  .reading-searchfield {
+    /*検索box*/
+    border: none;
+    background-color: transparent;
+    height: 40px;
+  }
+
+  /*フッター*/
+
+  .footer-area {
+    margin-top: 100px;
+  }
+
+  /*会社情報・考え方・研究会・セミナーのchildページとAccess,お問合せ、新規事業開発室、プライバシーポリシー、コラム＆アーティクル、ourstories投稿のh1設定*/
+
+  h1.back-blue,
+  p.back-blue {
+    font-size: 20px;
+    height: 80px;
+    line-height: 80px; /*見出し垂直方向のセンタリング*/
+  }
+
+  /*考え方教室／研究会／セミナー／人材開発／経営コンサルティング／ourstories／社会提言／検索結果（ヘッダーの検索・readingの検索）／コラム＆の共通css*/
+
+  .training-title,
+  .study-title,
+  .seminar-title,
+  .human-title,
+  .consulting-title,
+  .ourstories-title,
+  .service-title,
+  .think-tank-function-title,
+  .search-result-title,
+  .column-article-title,
+  .media-business-title {
+    width: 94.67%;
+    margin-top: 20px;
+  }
+
+  /*人材開発・経営コンサルティング・研究会活動・セミナー・考え方・社会提言・検索結果（ヘッダーの検索・readingの検索）／コラム＆共通css*/
+
+  #human-visual,
+  #consulting-visual,
+  #study-visual,
+  #seminar-visual,
+  #training-visual,
+  #think-tank-function-visual,
+  #search-result-visual,
+  #column-article-visual,
+  #media-business-visual {
+    width: 100%;
+  }
+
+  /*人材開発・経営コンサルティング・研究会活動・セミナー・考え方共通／コラム＆共通css*/
+
+  .human-contents h2,
+  .consulting-contents h2,
+  .study-contents h2,
+  .seminar-contents h2,
+  .training-contents h2,
+  .think-tank-function-contents h2,
+  .column-article-wrap h2,
+  .media-business-contents h2 {
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .human-contents p,
+  .consulting-contents p,
+  .study-contents p,
+  .seminar-contents p,
+  .training-contents p,
+  .think-tank-function-contents p {
+    font-size: 18px;
+    line-height: 1.448;
+  }
+
+  .human-container,
+  .consulting-container,
+  .study-container,
+  .training-container {
+    width: 90.4%;
+  }
+
+  .human-item,
+  .consulting-item,
+  .study-item,
+  .training-item {
+    width: 100%;
+  }
+
+  .human-item h3,
+  .consulting-item h3,
+  .study-item h3,
+  .seminar-item1 h3,
+  .seminar-item2 h3,
+  .training-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  .human-item p,
+  .consulting-item p,
+  .study-item p,
+  .seminar-item1 p,
+  .seminar-item2 p,
+  .training-item p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  /*考え方教室・研究会活動・人材開発・経営コンサルティング・セミナー・検索結果（ヘッダーの検索・readingの検索）の共通css*/
+
+  .training-contents-wrap,
+  .study-contents-wrap,
+  .human-contents-wrap,
+  .consulting-contents-wrap,
+  .seminar-contents-wrap,
+  .think-tank-function-wrap,
+  .search-result-contents-wrap,
+  .column-article-wrap,
+  .media-business-contents {
+    width: 82.4%;
+    margin-top: 33px;
+  }
+
+  /*考え方教室・研究会活動・経営コンサルティングの共通css*/
+
+  .training-container,
+  .study-container,
+  .human-container,
+  .consulting-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 39px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*検索結果（ヘッダーの検索・readingの検索）*/
+
+  h2.sp {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  h2.search-result {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h3.result-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  ul.result-contents {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .result-contents p {
+    font-size: 18px;
+  }
+
+  /*会社情報*/
+
+  .company-title {
+    width: 94.7%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  .border-only {
+    margin-top: 0px;
+  }
+
+  .company-contents {
+    width: 90.4%;
+    margin-top: 33px;
+  }
+
+  .company-contents h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 39px;
+    margin-top: 0px;
+  }
+
+  .company-contents h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .company-container1,
+  .company-container2 {
+    flex-direction: column;
+    align-items: center; /* 中央寄せ */
+  }
+
+  .company-container1 {
+    margin-top: 50px;
+  }
+
+  .company-container2 {
+    margin-top: 0px;
+  }
+
+  .company-item8 {
+    margin-bottom: 40px;
+    margin-left: 18px;
+    margin-right: 18px;
+    width: 100%;
+  }
+
+  /*会社概要*/
+
+  .aboutus {
+    width: 80.4%;
+    display: block;
+    margin-top: 32px;
+  }
+
+  .aboutus th,
+  .aboutus td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding-left: 0px;
+    border-spacing: 0 50px; /*テーブルセルのボーダー間隔。左右、上下*/
+  }
+
+  .aboutus td {
+    margin-top: 30px;
+  }
+
+  /*ご挨拶*/
+
+  .contents {
+    width: 82.4%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portrait {
+    width: 90%;
+  }
+
+  .genken-president p {
+    font-size: 20px;
+  }
+
+  .gen-message {
+    width: 90.9%;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+  }
+
+  /*現研の理念・使命*/
+
+  .contents {
+    width: 82.4%;
+    margin-top: 30px;
+  }
+
+  .kihonrinen {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  .contents p {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .book-title-up {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 32px;
+  }
+
+  .shui {
+    margin-top: 55px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .shimei {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .book-about {
+    margin-top: 50px;
+  }
+
+  .book-title-down {
+    font-size: 20px;
+    margin-top: 80px;
+  }
+
+  .book-about {
+    width: 80.4%;
+  }
+
+  .book-zibunwokoeru {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .book-about p {
+    margin-top: 31px;
+    font-size: 18px;
+  }
+
+  /*Access*/
+
+  .access-section-wrap {
+    width: 94.66%;
+    margin-top: 30px;
+  }
+
+  .access-contents h2 {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  p.ad {
+    font-size: 18px;
+    margin-top: 36px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+  }
+
+  .tegaki-map {
+    width: 100%;
+  }
+
+  .access-root {
+    font-size: 16px;
+    margin-left: 0px;
+  }
+
+  .access-contents iframe {
+    width: 100%; /* モバイル時のマップの幅を100%に設定 */
+    height: 300px; /* モバイル時のマップの高さを調整（適宜調整してください） */
+  }
+
+  .break-time h2 {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    margin-left: 33px;
+  }
+
+  .recommend-shop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .break-time-shop {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shop {
+    order: -1; /* マイナスの値を使って画像とテキストの順序を逆にする */
+    margin-left: 33px;
+  }
+
+  .shop p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  /*事業の構成*/
+
+  #service-visual {
+    width: 100%;
+  }
+
+  .service-contents {
+    width: 84.27%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 33px;
+  }
+
+  .service-contents h2 {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
+
+  .service-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 118px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-item h3 {
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .service-item p {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+
+  /*ourstories*/
+
+  .ourstories-container {
+    width: 90.4%;
+    display: block;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+
+  .ourstories-item {
+    margin-bottom: 38px;
+    justify-content: center;
+  }
+
+  .ourstories-contents h2 {
+    margin-left: 39px;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  #ourstories-visual {
+    width: 100%;
+  }
+
+  .ourstories-item h4 {
+    font-size: 16px;
+  }
+
+  .ourstories-item h4,
+  .ourstories-item p {
+    text-align: center;
+  }
+
+  .p.ourstories-subheading {
+    text-align: center;
+  }
+
+  p.part {
+    font-size: 18px;
+    text-align: justify;
+  }
+  /*経営コンサルティングのcss*/
+
+  /*若手リーダー／海外駐在／財務分析編／産業（建築）編／M＆A講座／パワーアップ研究セミナー／研究会／総合研究会共通cs*/
+
+  .section-wrap {
+    width: 84%;
+  }
+
+  .young-item-wrap,
+  .foreign-item-wrap,
+  .finance-item-wrap,
+  .ma-item-wrap,
+  .innovation-item-wrap,
+  .powerup-item-wrap,
+  .spring-item-wrap,
+  .comprehensive-item-wrap {
+    display: block;
+    flex-direction: column;
+    margin-top: 78px;
+  }
+
+  .item5,
+  .item6 {
+    width: 100%;
+  }
+
+  .item5 {
+    margin-bottom: 25px;
+  }
+
+  .item6 {
+    margin-left: 0px;
+  }
+
+  .foreign-contents h2,
+  .finance-contents h2,
+  .innovation-contents h2,
+  .ma-contents h2,
+  .young-contents h2,
+  .industry-contents h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+  }
+
+  .foreign-contents p,
+  .finance-contents p,
+  .innovation-contents p,
+  .ma-contents p,
+  .young-contents p,
+  .industry-contents p {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  .foreign-pg,
+  .finance-pg,
+  .innovation-pg,
+  .ma-pg,
+  .young-pg {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .foreign-pg-first,
+  .foreign-pg-second,
+  .foreign-pg-third,
+  .finance-pg-first,
+  .finance-pg-second,
+  .innovation-pg-first,
+  .innovation-pg-second,
+  .ma-pg-first,
+  .ma-pg-second,
+  .young-pg-first,
+  .young-pg-second {
+    width: 100%;
+  }
+
+  .next-schedule {
+    width: 100%;
+    margin-top: 105px;
+  }
+
+  .next-schedule h2,
+  .application-wrap h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .schedule {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .schedule th,
+  .schedule td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .schedule th {
+    font-size: 18px;
+  }
+
+  .schedule td {
+    font-size: 16px;
+  }
+
+  .application {
+    margin-left: 0px;
+  }
+
+  .application-text p,
+  .application ul li,
+  .inquiry p {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .application-text p {
+    text-align: justify;
+  }
+
+  /*海外駐在*/
+  /*表組み*/
+  /*.foreign-pg-second, .foreign-pg-third {
+        border: 1px solid;
+        margin-top: 10px;
+    }
+}*/
+  .foreign-pg-first,
+  .foreign-pg-second,
+  .foreign-pg-third {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  .foreign-pg-first td,
+  .foreign-pg-third td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .foreign-pg-first tr td:nth-child(1),
+  .foreign-pg-third tr td:nth-child(1) {
+    vertical-align: bottom;
+    padding-bottom: 0px;
+  }
+
+  /*財務編*/
+
+  .finance-pg-first,
+  .finance-pg-second {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0px;
+  }
+
+  .finance-pg-first th,
+  .finance-pg-first td,
+  .finance-pg-second th,
+  .finance-pg-second td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .finance-pg-first th,
+  .finance-pg-second th {
+    vertical-align: bottom;
+    padding-bottom: 0px;
+  }
+
+  .finance-pg-second {
+    margin-top: 20px;
+  }
+
+  /*建設編*/
+
+  .innovation-pg-first,
+  .innovation-pg-second {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0px;
+  }
+
+  .innovation-pg-second {
+    margin-top: 20px;
+  }
+
+  /*M&A*/
+
+  .ma-pg-first,
+  .ma-pg-second {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0px;
+  }
+
+  .ma-pg-first th,
+  .ma-pg-first td,
+  .ma-pg-second th,
+  .ma-pg-second td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .ma-pg-first th,
+  .ma-pg-second th {
+    vertical-align: bottom;
+    padding-bottom: 0px;
+  }
+
+  .ma-pg-second {
+    margin-top: 20px;
+  }
+
+  /*若手*/
+
+  .young-pg-first,
+  .young-pg-second {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0px;
+  }
+
+  .young-pg-first th,
+  .young-pg-first td,
+  .young-pg-second th,
+  .young-pg-second td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .young-pg-first th,
+  .young-pg-second th {
+    vertical-align: bottom;
+    padding-bottom: 0px;
+  }
+
+  .young-pg-second {
+    margin-top: 20px;
+  }
+
+  /*財務編・建設編・M＆A編・若手*/
+  /*表組み*/
+  /*@media (max-width: 640px) {
+    
+    .finance-pg-second, .innovation-pg-second, .ma-pg-second, .young-pg-second {
+        border: 1px solid;
+        margin-top: 10px;
+    }
+}*/
+
+  /*研究会活動*/
+  .study-contents p {
+    margin-top: 20px;
+  }
+
+  /*@media (max-width: 640px) {
+    #study-visual{
+        width: 100%;
+    }
+
+    .study-title {
+        margin-top: 20px;
+    }
+
+    .study-contents h2 {
+        margin-top: 20px;
+    }
+
+    .study-contents p {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .study-container {
+        width: 90.4%;
+    }
+
+    .study-item {
+        width: 100%;
+    }
+
+    .study-item h3{
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 12px;
+    }
+
+    .study-item p{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+}
+
+/*現研セミナー*/
+
+  .seminar-container {
+    display: flex;
+    flex-direction: row; /* 横に並べる場合は row を指定 */
+    flex-wrap: wrap; /* 要素が横幅を超えた場合に折り返す場合に flex-wrap を指定 */
+  }
+  .seminar-item2 {
+    margin-top: 20px;
+  }
+
+  .seminar-contents ul {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .seminar-contents li {
+    text-align: left;
+  }
+
+  .seminar-item1,
+  .seminar-item2 {
+    width: 100%;
+  }
+
+  .seminar-item1 p,
+  .seminar-item2 p {
+    text-align: justify;
+  }
+
+  /*産業事情検討会・新経営具体化研究会*/
+
+  .past-themes-wrap,
+  .past-themes-wrap {
+    flex-direction: column;
+    column-gap: 0; /* 縦並びにする場合は横の間隔を0に設定 */
+  }
+
+  /*====================ここからご挨拶／現研の理念・使命／経営コンサルティングの子ページ／人材開発の子ページ／研究会会員制度の共通css=======*/
+
+  .contents {
+    width: 82.4%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /*文章両端揃え*/
+  }
+
+  .contents {
+    margin-top: 33px;
+  }
+  .contents h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .contents p {
+    margin-top: 50px;
+    line-height: 1.448;
+  }
+
+  /*社会提言*/
+  .think-tank-function-contents,
+  .research-report-contents {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .think-tank-function-contents h2 {
+    font-size: 20px;
+    margin-top: 100px;
+  }
+  .research-report-container-wrap {
+    width: 84%;
+    display: grid;
+    grid: wrap;
+    row-gap: 30px;
+  }
+
+  .think-tank-function-contents ul li {
+    font-size: 18px;
+  }
+
+  .research-report-contents h3 {
+    font-size: 20px;
+  }
+
+  .research-report-item p {
+    font-size: 18px;
+  }
+
+  .research-report-item h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .books-intro-wrap {
+    width: 60%;
+    margin-top: 100px;
+  }
+
+  .books-intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .books-intro-item {
+    width: 90.22%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .books-intro-title,
+  .books-intro-okuduke {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*コラム＆アーティクル*/
+
+  .column-article-wrap h2 {
+    margin-left: 0px;
+  }
+
+  .column-article-archive {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .management-forum-wrap {
+    width: 100%;
+  }
+
+  .management-forum {
+    padding: 20px;
+  }
+
+  .management-forum h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .management-forum-content p {
+    font-size: 18px;
+  }
+
+  .small-gray,
+  .small-gray time {
+    margin-left: 0px;
+  }
+
+  .aside-area {
+    width: 100%;
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .archive-month-wrap h3,
+  .category-links h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .archive-list li,
+  .category-links li {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    margin-top: 80px;
+  }
+
+  /*メディア事業*/
+
+  .media-business-contents h2 {
+    margin-left: 0px;
+  }
+  .media-business-container {
+    /*display: block;*/
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      'a'
+      'c'
+      'd'
+      'b'; /*順番を変える*/
+  }
+
+  .media-business-item1 {
+    border-top: 2px solid #4070bf;
+    border-left: 2px solid #4070bf;
+    border-right: 2px solid #4070bf;
+    border-radius: 10px;
+    grid-area: a;
+  }
+
+  .media-business-item2 {
+    border-top: 2px solid #4070bf;
+    border-left: 2px solid #4070bf;
+    border-right: 2px solid #4070bf;
+    border-radius: 10px;
+    grid-area: b;
+  }
+
+  .media-business-item3 {
+    grid-area: c;
+    border-left: 2px solid #4070bf;
+    border-right: 2px solid #4070bf;
+  }
+
+  .media-business-item4 {
+    border-left: 2px solid #4070bf;
+    border-right: 2px solid #4070bf;
+    border-bottom: 2px solid #4070bf;
+    border-radius: 10px;
+    grid-area: d;
+  }
+
+  .media-business-item p {
+    width: 100;
+    font-size: 18px;
+  }
+
+  .genken-journal-typ,
+  .bookseller-typ,
+  .street-typ,
+  .genken-forum-typ {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .genken-journal-typ {
+    width: 53.4%;
+  }
+
+  .bookseller-typ {
+    width: 67.31%;
+  }
+
+  .street-typ {
+    width: 65.37%;
+  }
+
+  .genken-forum-typ {
+    width: 37.54%;
+  }
+
+  /*考え方教室*/
+  .training-contents ul {
+    font-size: 18px;
+  }
+
+  /*お問い合わせ*/
+
+  .lead {
+    width: 82.4%;
+    font-size: 18px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact {
+    width: 82.4%;
+  }
+
+  .contact th,
+  .contact td {
+    display: block;
+  }
+
+  .wpcf7 input[type='submit'] {
+    width: 63%;
+  }
+
+  /*産検アーカイブ*/
+
+  .conference {
+    font-size: 16px;
+  }
+
+  .industry-contents h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .past-theme {
+    display: block;
+    flex-direction: column;
+  }
+
+  .past-theme li {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .application-wrap h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .application-text {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  /*プライバシーポリシー*/
+  .privacy-contents {
+    width: 82.4%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /*文章両端揃え*/
+  }
+
+  .privacy-contents {
+    margin-top: 33px;
+  }
+
+  .privacy-contents h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .privacy-contents p {
+    font-size: 18px;
+    margin-top: 30px;
+    line-height: 1.448;
+  }
+
+  .privacy-contents h3 {
+    font-size: 20px;
+  }
+
+  .privacy-contents ul li {
+    font-size: 18px;
+  }
+
+  /*検索結果（コラム＆アーティクル）*/
+
+  h3.new-article {
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  h3.search-result {
+    left: 32px;
+    top: 280px;
+  }
+}
